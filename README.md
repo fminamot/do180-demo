@@ -1,5 +1,12 @@
 # DO180 Demo
 
+## はじめに
+```
+$ lab openshift-resources start
+$ source /usr/local/etc/ocp4.config
+$  oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+```
+
 ## (1) Podのみ
 
 ```
@@ -35,3 +42,14 @@ oc get route
 ```
 oc scale --replicas=3 deployment/hello-pod3
 ```
+
+## (5) Deployment.spec.replicasの値が3になっていることを確認
+```
+oc edit deployment/hello-pod3
+```
+
+## 終了
+```
+$ lab openshift-resources finish
+```
+
