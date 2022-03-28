@@ -10,6 +10,7 @@ $ oc new-project ${RHT_OCP4_DEV_USER}-do180-demo
 
 ## (1) Podのみ
 
+vi pod.yml
 ```
 apiVersion: v1
 kind: Pod
@@ -24,6 +25,10 @@ spec:
     ports:
     - containerPort: 8080
       protocol: TCP
+```
+
+```
+$ oc create -f pod.yml
 ```
 
 ## (2) Deploy/Service (Kubernetes)
