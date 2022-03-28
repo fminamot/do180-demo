@@ -5,6 +5,7 @@
 $ lab openshift-resources start
 $ source /usr/local/etc/ocp4.config
 $ oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+$ oc new-project ${RHT_OCP4_DEV_USER}-do180-demo
 ```
 
 ## (1) Podのみ
@@ -50,6 +51,7 @@ oc edit deployment/hello-pod3
 
 ## 終了
 ```
+$ oc delete project ${RHT_OCP4_DEV_USER}-do180-demo
 $ lab openshift-resources finish
 ```
 
